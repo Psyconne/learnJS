@@ -1,10 +1,10 @@
-function range(start, end, step=1) {
+function range(start, end, step=start > end ? -1:1) {
     //return [start, start+step, ..,end-step, end]
     let result = [];
-    if (start < end) {
-	for (let i=start; i<=end; i=i+step) result.push(i);	
+    if (step > 0) {
+	for (let i=start; i<=end; i+=step) result.push(i);	
    } else { 
-       	for (let i=end; i<=start; i=i-step) result.unshift(i);
+       	for (let i=start; i>=end; i+=step) result.push(i);
     }
 	return result;
 }
@@ -17,4 +17,4 @@ function sum(array) {
     return result;
 }
 
-console.log(sum(range(5, 10, 1)));
+console.log(sum(range(5, 2, -1)));
