@@ -3,7 +3,7 @@ function reverseArray(array) {
     for (let value of array) result.unshift(value); 
     return result;
 }
-
+//reverse in place without the need of an array
 function reverseArrayInPlace(array) {
     lengthOf = array.length;
     for (let i=0; i<Math.floor(lengthOf/2); i++) {
